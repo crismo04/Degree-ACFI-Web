@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<div style="background-image:url('img/1.jpg')">
+		<div id="fruits" class="jumbotron">
+			
+			<div class="row" >
+				<div class="col-sm-3">
+				</div>
+				<div class="col-sm-6">
+					{% if message %}
+						<div class="alert alert-danger alert-dismissible">
+							 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  			{{ message }}
+						</div>
+					{% endif %}
+			<form action="/dashboard/{{session['username']}}" method="post">
+				<table class="table table-condensed" border="2">
+						<tr style="background-color: lightblue; ">
+							<th style="text-align: center;">Fruit Name</th>
+							<th style="text-align: center;">Price per Kg</th>
+							<th style="text-align: center;">How Much?</th>
+							<th style="text-align: center;">select</th>
+						</tr>
+					{% for i in range(total_fruits) %}
+						<tr>
+							<td>{{ data[i][1] }}</td>
+							<td>{{ data[i][2] }}</td>
+							<td>
+								<select name="{{data[i][1]}}_select">
+								  <option value="0.5">0.5 kg</option>
+								  <option value="1" selected>1 kg</option>
+								  <option value="2">2 kg</option>
+								  <option value="3">3 kg</option>
+								</select>
+							</td>
+							<td><input type="checkbox" name="{{data[i][1]}}" /></td>
+						</tr>
+					{% endfor %}
+				</table>
+				<input type="submit" name="submit" value="Buy Iteams">
+				<h2></h2>
+			</form>
+			    </div>
+				<div class="col-sm-3">
+				</div>
+			</div>
+			
+		</div>
+			
+	</div>
+{% endblock content %}

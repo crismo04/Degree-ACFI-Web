@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<div class="jumbotron">
+				<div class="row">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-8">	
+							<h2 style="text-align: center;font-family: Comic Sans Ms;">Signup</h2>
+							<hr style="border: 2px solid black; border-radius: 5px;"/>
+						{% if res_msg and danzer == "true"  %}
+							<div class="alert alert-danger alert-dismissible">
+									 <a href="/signup" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									  <span class="glyphicon glyphicon-warning-sign"></span></span>  {{   res_msg }}
+							</div>
+						{% endif %}
+
+						{% if res_msg and danzer == "false" %}
+							<div class="alert alert-info alert-dismissible">
+									<a href="/signup" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									{{ res_msg }}
+							</div>
+						{% endif %}
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+				
+				
+
+				<form method="POST" action="/signup">
+
+						<div class="row">
+							<div class="col-sm-2"></div>
+							<div class="col-sm-4">
+								
+							<div class="form-group">
+								<label for="text">Name</label>
+								 <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter  Name">	   
+							   </div>
+
+							</div>
+							<div class="col-sm-4">
+
+								<div class="form-group">
+									<label for="text">Username</label>
+									 <input type="text" class="form-control" name="username" aria-describedby="username" placeholder="Enter  Username">	   
+								   </div>
+
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-2"></div>
+							<div class="col-sm-4">
+								
+									<div class="form-group">
+											<label for="email">Email</label>
+											<input type="email" class="form-control" name="email" placeholder="Enter  Email">
+										</div>
+
+							</div>
+							<div class="col-sm-4">
+
+									<div class="form-group">
+											<label for="text">Contact</label>
+										 <input type="text" class="form-control" name="contact" aria-describedby="username" placeholder="Enter  Contact">	   
+										 </div>
+
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-2"></div>
+							<div class="col-sm-8">
+
+								
+									<div class="form-group">
+											<label for="text">Address</label>
+											<textarea rows="4" cols="90" name="address" placeholder="Enter  Address" ></textarea>	   
+										 </div>
+
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+
+						<div class="row">
+								<div class="col-sm-2"></div>
+								<div class="col-sm-8">
+
+										
+						  <div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input type="password" class="form-control" name="password" placeholder="Password">
+							   
+							  </div>
+
+								</div>
+								<div class="col-sm-2"></div>
+						</div>
+
+						<div class="row">
+								<div class="col-sm-2"></div>
+								<div class="col-sm-8">
+
+										<div class="form-group">
+												<label for="exampleInputPassword1" ><a " href="/login">Already has a account ? </a></label>
+												<button type="submit" name="submit" style="float: right;" class="btn btn-primary btn-lg">  Signup </button>
+											</div>
+
+								</div>
+								<div class="col-sm-2"></div>
+						</div>
+
+						  
+
+						  
+							
+							
+
+							
+						 
+						  
+						  
+				</form>
+
+		
+		   
+		</div>
+{% endblock content %}
+
+
