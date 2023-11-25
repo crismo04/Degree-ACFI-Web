@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Frutería Riesco</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ <header>
+ <nav>
+   <h3 style="align-self: center;">Fruterias riesco, el melón más fresco</li>
+   <ul>
+     <li><a href="{{ url_for('routes.home') }}">Inicio</a></li>
+     <li><a href="{{ url_for('routes.fruits') }}">Frutas</a></li>
+     <li ><a href="{{ url_for('routes.about') }}">About</a></li>
+    </ul>
+ </nav>
+ </header>
+ </header>
+ <main class="grid-container">
+  <section class="grid-item">
+    <h2>Nuestras frutas</h2>
+    <p>Descubre nuestra selección de frutas frescas y deliciosas.</p>
+    <a href="{{ url_for('routes.fruits') }}">Ver frutas</a>
+  </section>
+  <section class="grid-item">
+    <h2>Nuestros productos</h2>
+    <p>conocenos.</p>
+    <a href="{{ url_for('routes.about') }}">Ver productos</a>
+  </section>
+ </main>
+ <footer>
+  <p>Frutería &copy; 2023</p>
+ </footer>
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

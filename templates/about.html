@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Frutería Riesco</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ <header>
+ <nav>
+   <h3 style="align-self: center;">Fruterias riesco, el producto más fresco</li>
+   <ul>
+     <li><a href="{{ url_for('routes.home') }}">Inicio</a></li>
+     <li><a href="{{ url_for('routes.fruits') }}">Frutas</a></li>
+     <li ><a href="{{ url_for('routes.about') }}">About</a></li>
+    </ul>
+ </nav>
+ </header>
+ <main class="grid-container">
+ <section class="grid-item">
+   <h1 class="my-4">Nosotros</h1>
+   <p>Este es un proyecto de tecnología web por Python (utilizando el marco de trabajo FLASK). En este sitio web de frutas en línea, los usuarios pueden comprar frutas en línea.</p>
+   <!-- Team Members Row -->
+   <div class="row">
+     <div class="col-lg-6 col-sm-6 text-center mb-4" style="padding-top:40px;">
+       <img class="rounded-circle img-fluid d-block mx-auto" src="" alt="">
+       <h3>Alvaro Alvarez</h3>
+       <a href="https://www.instagram.com/">(correo)</a>
+     </div>
+     <div class="col-lg-6 col-sm-6 text-center mb-4" style="padding-top:40px;">
+       <img class="rounded-circle img-fluid d-block mx-auto" src="" alt="">
+       <h3>Alvaro Corrochano</h3>
+       <a href="https://www.instagram.com/">(correo)</a>
+     </div>
+     <div class="col-lg-6 col-sm-6 text-center mb-4" style="padding-top:40px;">
+       <img class="rounded-circle img-fluid d-block mx-auto" src="" alt="">
+       <h3>Cristian Molina</h3>
+       <a href="https://www.instagram.com/">(correo)</a>
+     </div>
+   </div>
+ </section>
+ </main>
+ <footer>
+ <p>Frutería Riesco&copy; 2023</p>
+ </footer>
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
