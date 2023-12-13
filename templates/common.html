@@ -5,17 +5,18 @@
  <title>Frutería Riesco</title>
  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
 </head>
 <body>
  <header>
  <nav>
-   <h3 style="align-self: center;">Fruterias riesco, el producto más fresco</li>
-   <ul>
-     <li><a href="{{ url_for('routes.home') }}">Inicio</a></li>
-     <li><a href="{{ url_for('routes.fruits') }}">Frutas</a></li>
-     <li ><a href="{{ url_for('routes.about') }}">About</a></li>
-    </ul>
+    <div>
+      <h3 style="align-self: center;">Fruterias riesco, el producto más fresco</li>
+      <ul>
+        <li><a href="{{ url_for('routes.home') }}">Inicio</a></li>
+        <li><a href="{{ url_for('routes.fruits') }}">Frutas</a></li>
+        <li ><a href="{{ url_for('routes.about') }}">About</a></li>
+        </ul>
+    </div>
  </nav>
  </header>
  <main>

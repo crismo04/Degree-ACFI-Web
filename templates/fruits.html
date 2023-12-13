@@ -5,6 +5,7 @@
   <div class="row">
       {% for fruit in fruits %}
           <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 2">
               <div class="card">
                   <div class="card-body">
                       <h5 class="card-title">{{ fruit[1] }}</h5>
@@ -38,11 +39,12 @@
                 <label for="cvv">CVV</label>
                 <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" required>
             </div>
-            <button type="submit" class="btn btn-primary">Pay Now</button>
+            <button type="submit" class="btn btn-primary mb-5" onclick="window.location.href='payment'">Pay Now</button>
         </form>
     </div>
 </div>
 </div>
+<br>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 {% endblock content %}

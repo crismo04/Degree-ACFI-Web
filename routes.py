@@ -15,3 +15,7 @@ def fruits():
 @routes.route('/about')
 def about():
    return render_template('about.html')
+
+@routes.route('/payment')
+def payment():
+   return render_template('payment.html')

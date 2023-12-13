@@ -1,16 +1,32 @@
-{% extends "common.html" %}
 
-{% block content %}
-<main class="grid-container">
-  <section class="grid-item">
-    <h2>Nuestras frutas</h2>
-    <p>Descubre nuestra selección de frutas frescas y deliciosas.</p>
-    <a href="{{ url_for('routes.fruits') }}">Ver frutas</a>
-  </section>
-  <section class="grid-item">
-    <h2>Nuestros productos</h2>
-    <p>conocenos.</p>
-    <a href="{{ url_for('routes.about') }}">Ver productos</a>
-  </section>
- </main>
-{% endblock content %}
+<header>
+</header>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<style>
+  body {
+    background-image: url({{ url_for('static', filename='background.jpg') }});
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+</style>
+
+
+<body>
+
+  <div class="ml-5 mt-5">
+    <h1 style="font-size: 100px; color: #006064"> Frutería Riesco </h1>
+  </div>
+  <div class="ml-5 mt-5">
+    <h2 style="font-size: 50px; color: #006064"> El melón más fresco! </h1>
+  </div>
+  <div class="ml-5 mt-5">
+    <div style="font-size: 32px; color: #006064"> Descubre nuestras deliciosas frutas y verduras!  </h1>
+  </div>
+
+  <div >
+    <button type="button" class="btn btn-light mt-5" style="background-color: #006064; color:white" onclick="window.location.href='fruits'">Conoce nuestros productos</button>
+  </div>
+
+</body>

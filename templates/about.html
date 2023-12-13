@@ -2,28 +2,35 @@
 {% extends "common.html" %}
 
 {% block content %}
-<main class="grid-container">
-  <section class="grid-item">
-    <h1 class="my-4">Nosotros</h1>
-    <p>Este es un proyecto de tecnología web por Python (utilizando el marco de trabajo FLASK). En este sitio web de frutas en línea, los usuarios pueden comprar frutas en línea.</p>
-    <!-- Team Members Row -->
-    <div class="row">
-      <div class="col-lg-6 col-sm-6 text-center mb-4" style="padding-top:40px;">
-        <img class="rounded-circle img-fluid d-block mx-auto" src="" alt="">
-        <h3>Alvaro Alvarez</h3>
-        <a href="https://www.instagram.com/">(correo)</a>
-      </div>
-      <div class="col-lg-6 col-sm-6 text-center mb-4" style="padding-top:40px;">
-        <img class="rounded-circle img-fluid d-block mx-auto" src="" alt="">
-        <h3>Alvaro Corrochano</h3>
-        <a href="https://www.instagram.com/">(correo)</a>
-      </div>
-      <div class="col-lg-6 col-sm-6 text-center mb-4" style="padding-top:40px;">
-        <img class="rounded-circle img-fluid d-block mx-auto" src="" alt="">
-        <h3>Cristian Molina</h3>
-        <a href="https://www.instagram.com/">(correo)</a>
-      </div>
+
+
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://via.placeholder.com/300" class="img-fluid rounded" alt="Store Owner">
     </div>
-  </section>
-  </main>
+    <div class="col-md-6">
+      <h2>La fruta de Riesco</h2>
+      <p>En fruterias Riesco, nos tomamos en serio la fruta.</p>
+      <p>Nuestro control de calidad asegura que cada una de las frutas que entregamos sea perfecta.</p>
+      <p class="font-italic">"Me apasiona la fruta."</p>
+      <p>- Señor Riesco</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h2>Equipo de desarrollo</h2>
+      <p>Para fruterias Riesco, el equipo de desarrollo es como parte de la familia.</p>
+      <p>Compuesto por Cristian Molina, Álvaro Álvarez y Álvaro Corrochano, han realizado un trabajo excelente.</p>
+      <p class="font-italic">"Pensamos que la mejor opción era utilizar Flask para el back-end y SQLite para la base de datos."</p>
+      <p>- Equipo de desarrollo</p>
+    </div>
+    <div class="col-md-6 ">
+      <img src="https://via.placeholder.com/300" class="img-fluid rounded" alt="Store Owner">
+    </div>
+  </div>
+</section>
+
+
+
 {% endblock content %}
