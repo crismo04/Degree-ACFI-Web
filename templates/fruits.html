@@ -1,34 +1,48 @@
+{% extends "common.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
- <title>Frutería Riesco</title>
- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
- <header>
- <nav>
-   <h3 style="align-self: center;">Fruterias riesco, el producto más fresco</li>
-   <ul>
-     <li><a href="{{ url_for('routes.home') }}">Inicio</a></li>
-     <li><a href="{{ url_for('routes.fruits') }}">Frutas</a></li>
-     <li ><a href="{{ url_for('routes.about') }}">About</a></li>
-    </ul>
- </nav>
- </header>
- </header>
- <main class="grid-container">
-  <h1>Frutas</h1>
-  <ul>
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
       {% for fruit in fruits %}
-          <li>{{ fruit.name }}</li>
+          <div class="col-md-4 mb-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ fruit[1] }}</h5>
+                      <p class="card-text">{{ fruit[3] }}€/u</p>
+                      <div class="form-inline">
+                          <label for="quantity" class="mr-2">Quantity:</label>
+                          <input type="number" id="quantity" class="form-control mr-2" />
+                      </div>
+                  </div>
+              </div>
+          </div>
       {% endfor %}
-  </ul>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
- </main>
- <footer>
-  <p>Frutería &copy; 2023</p>
- </footer>
- <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="mb-4">Payment Details</h2>
+        <form>
+            <div class="form-group">
+              <label for="cardNumber">Full name</label>
+              <input type="text" class="form-control" id="fullName" placeholder="Enter Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number" required>
+            </div>
+            <div class="form-group">
+                <label for="expirationDate">Expiration Date</label>
+                <input type="text" class="form-control" id="expirationDate" placeholder="MM/YYYY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Pay Now</button>
+        </form>
+    </div>
+</div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock content %}

@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+import manageDB as db
 
 routes = Blueprint('routes', __name__)
 
@@ -8,7 +9,8 @@ def home():
 
 @routes.route('/fruits')
 def fruits():
-   return render_template('fruits.html')
+   print(db.get_all_fruits())
+   return render_template('fruits.html', fruits=db.get_all_fruits())
 
 @routes.route('/about')
 def about():
