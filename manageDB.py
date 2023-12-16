@@ -108,6 +108,8 @@ def populate_test_database():
   {"name": "Producto"},
   {"name": "FRUTERO"},
   {"name": "FRUTERO"},
+  {"name": "Robo descarado de imagenes de google"},
+  {"name": "Proyecto de AUDITORÍA, CALIDAD Y FIABILIDAD INFORMÁTICAS"},
   {"name": "Ajo"},
   {"name": "Aguacate"},
   {"name": "Cebollín"},
