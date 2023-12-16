@@ -1,11 +1,21 @@
 import sqlite3
+import os
 
 def create_database():
-  conn = sqlite3.connect('frutería_app.db')
+  # Get the current directory
+  current_directory = os.getcwd()
+
+  # Concatenate the current directory with your database name
+  db_path = os.path.join(current_directory, 'frutería_app.db')
+
+  conn = sqlite3.connect(db_path)
   c = conn.cursor()
 
+  # Drop the table if it exists
+  c.execute('''DROP TABLE IF EXISTS fruits''')
+
   c.execute('''
-      CREATE TABLE fruits (
+      CREATE  TABLE fruits (
           id INTEGER PRIMARY KEY,
           name TEXT,
           color TEXT,
@@ -17,7 +27,13 @@ def create_database():
   conn.close()
 
 def insert_fruit(name, color, price):
-  conn = sqlite3.connect('frutería_app.db')
+  # Get the current directory
+  current_directory = os.getcwd()
+
+  # Concatenate the current directory with your database name
+  db_path = os.path.join(current_directory, 'frutería_app.db')
+
+  conn = sqlite3.connect(db_path)
   c = conn.cursor()
 
   c.execute("INSERT INTO fruits (name, color, price) VALUES (?, ?, ?)", (name, color, price))
@@ -52,7 +68,13 @@ def populate_test_database():
       
 
 def get_all_fruits():
-  conn = sqlite3.connect('frutería_app.db')
+  # Get the current directory
+  current_directory = os.getcwd()
+
+  # Concatenate the current directory with your database name
+  db_path = os.path.join(current_directory, 'frutería_app.db')
+
+  conn = sqlite3.connect(db_path)
   c = conn.cursor()
 
   c.execute("SELECT * FROM fruits")
@@ -62,3 +84,9 @@ def get_all_fruits():
   conn.close()
 
   return rows
+
+if __name__ == '__main__':
+  create_database()
+  populate_test_database()
+  # insert_fruit()
+  print(get_all_fruits())
