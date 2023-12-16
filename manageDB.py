@@ -53,7 +53,7 @@ def insert_fruit(name, color, price, db):
 def populate_test_database():
 
   fruits_data = [
-    {"name": "Ajo", "color": "White", "price": 1.50},
+    {"name": "Ajo", "color": "grey", "price": 1.50},
     {"name": "Aguacate", "color": "Green", "price": 2.00},
     {"name": "Banano", "color": "Yellow", "price": 1.20},
     {"name": "Cebollín", "color": "Green", "price": 1.80},
@@ -63,7 +63,7 @@ def populate_test_database():
     {"name": "Kiwi", "color": "Brown", "price": 1.50},
     {"name": "Limón", "color": "Yellow", "price": 1.20},
     {"name": "Mango", "color": "Orange", "price": 2.00},
-    {"name": "Nabo", "color": "White", "price": 1.80},
+    {"name": "Nabo", "color": "grey", "price": 1.80},
     {"name": "Pepino", "color": "Green", "price": 1.50},
     {"name": "Pimiento", "color": "Red", "price": 2.50},
     {"name": "Plátano", "color": "Yellow", "price": 1.20},
@@ -79,7 +79,7 @@ def populate_test_database():
     {"name": "Uva", "color": "Purple", "price": 2.50},
     {"name": "Calabacín", "color": "Green", "price": 1.20},
     {"name": "Cantalupo", "color": "Orange", "price": 2.00},
-    {"name": "Champiñón", "color": "White", "price": 1.80},
+    {"name": "Champiñón", "color": "grey", "price": 1.80},
     {"name": "Espárrago", "color": "Green", "price": 2.00},
     {"name": "Puerro", "color": "Green", "price": 1.50},
     {"name": "Papayo", "color": "Orange", "price": 2.20},
@@ -93,8 +93,7 @@ def populate_test_database():
     {"name": "Caña de azúcar", "color": "Green", "price": 1.50},
     {"name": "Cactus", "color": "Green", "price": 2.20},
     {"name": "Frambuesa", "color": "Red", "price": 1.80},
-    {"name": "Membrillo", "color": "Yellow", "price": 1.50},
-    {"name": "Alcachofa", "color": "Green", "price": 2.50}
+    {"name": "Membrillo", "color": "Yellow", "price": 1.50}
   ]
 
   # Insert each fruit into the database using the existing function
