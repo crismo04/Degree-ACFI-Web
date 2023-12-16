@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- boton para cambiar el color de las frutas
-    
+
 <button id="change-color-button">Change Color</button>
 <script>
     window.onload = function() {
@@ -29,7 +29,7 @@
   <div class="row">
       {% for fruit in fruits %}
           <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 2">
+            <img src="{{ fruit[4] }}" class="card-img-top" alt="Product">
               <div class="card">
                   <div class="card-body">
                       <h5 class="card-title fruit-name" style="color: {{fruit[2]}};">{{ fruit[1] }}</h5>

@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import download_image as image
 
 def create_database():
   # Get the current directory
@@ -20,7 +21,8 @@ def create_database():
           id INTEGER PRIMARY KEY,
           name TEXT,
           color TEXT,
-          price INTEGER
+          price INTEGER,
+          url TEXT
       )
   ''')
   c.execute('''
@@ -33,7 +35,7 @@ def create_database():
   conn.commit()
   conn.close()
 
-def insert_fruit(name, color, price, db):
+def insert_fruit(name, color, price, db, url):
   # Get the current directory
   current_directory = os.getcwd()
 
@@ -43,7 +45,7 @@ def insert_fruit(name, color, price, db):
   conn = sqlite3.connect(db_path)
   c = conn.cursor()
   if db == 'fruits':
-    c.execute("INSERT INTO fruits (name, color, price) VALUES (?, ?, ?)", (name, color, price))
+    c.execute("INSERT INTO fruits (name, color, price, url) VALUES (?, ?, ?, ?)", (name, color, price, url))
   else:
     c.execute(f"INSERT INTO {db} (name) VALUES ('{name}')")
 
@@ -98,7 +100,8 @@ def populate_test_database():
 
   # Insert each fruit into the database using the existing function
   for fruit in fruits_data:
-      insert_fruit(fruit["name"], fruit["color"], fruit["price"], 'fruits')
+      im = image.get_google_img(fruit["name"])
+      insert_fruit(fruit["name"], fruit["color"], fruit["price"], 'fruits', im)
 
   h_data = [
   {"name": "RIESCO"},
@@ -144,7 +147,7 @@ def populate_test_database():
 
   # Insert each fruit into the database using the existing function
   for h in h_data:
-      insert_fruit(h["name"], None, None, 'header')
+      insert_fruit(h["name"], None, None, 'header', None)
 
 
 def get_all_fruits(db='fruits'):
