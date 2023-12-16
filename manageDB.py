@@ -22,7 +22,8 @@ def create_database():
           name TEXT,
           color TEXT,
           price INTEGER,
-          url TEXT
+          url TEXT,
+          temporada DATE
       )
   ''')
   c.execute('''
@@ -57,18 +58,18 @@ def populate_test_database():
   fruits_data = [
     {"name": "Ajo", "color": "grey", "price": 1.50},
     {"name": "Aguacate", "color": "Green", "price": 2.00},
-    {"name": "Banano", "color": "Yellow", "price": 1.20},
+    {"name": "Banano", "color": "Olive", "price": 1.20},
     {"name": "Cebollín", "color": "Green", "price": 1.80},
     {"name": "Chayote", "color": "Green", "price": 1.50},
     {"name": "Higo", "color": "Purple", "price": 2.20},
     {"name": "Jengibre", "color": "Brown", "price": 2.50},
     {"name": "Kiwi", "color": "Brown", "price": 1.50},
-    {"name": "Limón", "color": "Yellow", "price": 1.20},
+    {"name": "Limón", "color": "Olive", "price": 1.20},
     {"name": "Mango", "color": "Orange", "price": 2.00},
     {"name": "Nabo", "color": "grey", "price": 1.80},
     {"name": "Pepino", "color": "Green", "price": 1.50},
     {"name": "Pimiento", "color": "Red", "price": 2.50},
-    {"name": "Plátano", "color": "Yellow", "price": 1.20},
+    {"name": "Plátano", "color": "Olive", "price": 1.20},
     {"name": "Rábano", "color": "Red", "price": 1.80},
     {"name": "Tomate", "color": "Red", "price": 2.00},
     {"name": "Coco", "color": "Brown", "price": 2.50},
@@ -76,7 +77,7 @@ def populate_test_database():
     {"name": "Maní", "color": "Brown", "price": 1.50},
     {"name": "Melocotón", "color": "Orange", "price": 2.00},
     {"name": "Melón", "color": "Green", "price": 1.50},
-    {"name": "Pomelo", "color": "Yellow", "price": 2.20},
+    {"name": "Pomelo", "color": "Olive", "price": 2.20},
     {"name": "Tamarindo", "color": "Brown", "price": 1.80},
     {"name": "Uva", "color": "Purple", "price": 2.50},
     {"name": "Calabacín", "color": "Green", "price": 1.20},
@@ -91,11 +92,11 @@ def populate_test_database():
     {"name": "Cacao", "color": "Brown", "price": 1.50},
     {"name": "Haba", "color": "Green", "price": 2.00},
     {"name": "Acelga", "color": "Green", "price": 1.80},
-    {"name": "Azafrán", "color": "Yellow", "price": 2.00},
+    {"name": "Azafrán", "color": "Olive", "price": 2.00},
     {"name": "Caña de azúcar", "color": "Green", "price": 1.50},
     {"name": "Cactus", "color": "Green", "price": 2.20},
     {"name": "Frambuesa", "color": "Red", "price": 1.80},
-    {"name": "Membrillo", "color": "Yellow", "price": 1.50}
+    {"name": "Membrillo", "color": "Olive", "price": 1.50}
   ]
 
   # Insert each fruit into the database using the existing function

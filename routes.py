@@ -5,7 +5,7 @@ routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 def home():
-   return render_template('index.html')
+   return render_template('index.html', header_fruit=db.get_random_fruits()[0][0])
 
 @routes.route('/fruits')
 def fruits():

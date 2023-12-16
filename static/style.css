@@ -33,6 +33,12 @@ body {
     gap: 20px;
     padding: 20px;
    }
+
+   .card-img-top {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; /* this will ensure that the image covers the whole space without distorting the aspect ratio */
+   }
    
    .grid-item {
     background-color: #b2dfdb;
