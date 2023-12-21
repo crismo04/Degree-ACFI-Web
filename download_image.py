@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 
+
+# Función para webscraping para guardar una imagen para cada item en el catálogo.
 def get_google_img(query):
    """
    gets a link to the first google image search result

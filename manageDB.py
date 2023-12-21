@@ -2,20 +2,24 @@ import sqlite3
 import os
 import download_image as image
 
+
+# Funcion para crear la base de datos
+# Tambien hace drop de las tablas en caso de que existiesen para vaciarlas
 def create_database():
-  # Get the current directory
+
   current_directory = os.getcwd()
 
-  # Concatenate the current directory with your database name
+  # Guardamos el archivo de base de datos en el directorio local
   db_path = os.path.join(current_directory, 'frutería_app.db')
 
   conn = sqlite3.connect(db_path)
   c = conn.cursor()
 
-  # Drop the table if it exists
+  # Drop de las tablas si existen
   c.execute('''DROP TABLE IF EXISTS fruits''')
   c.execute('''DROP TABLE IF EXISTS header''')
 
+  # Volvemos a crear las tablas
   c.execute('''
       CREATE  TABLE fruits (
           id INTEGER PRIMARY KEY,
@@ -36,11 +40,13 @@ def create_database():
   conn.commit()
   conn.close()
 
+
+# Insertar una fruta en la base de datos. 
 def insert_fruit(name, color, price, db, url):
-  # Get the current directory
+
   current_directory = os.getcwd()
 
-  # Concatenate the current directory with your database name
+  # Buscamos el archivo de base de datos en el directorio local
   db_path = os.path.join(current_directory, 'frutería_app.db')
 
   conn = sqlite3.connect(db_path)
@@ -53,6 +59,8 @@ def insert_fruit(name, color, price, db, url):
   conn.commit()
   conn.close()
 
+
+# Funcion para rellenar la base de datos con valores de prueba.
 def populate_test_database():
 
   fruits_data = [
@@ -99,11 +107,13 @@ def populate_test_database():
     {"name": "Membrillo", "color": "Olive", "price": 1.50}
   ]
 
-  # Insert each fruit into the database using the existing function
+  # Se reutiliza la funcion insert_fruit 
   for fruit in fruits_data:
       im = image.get_google_img(fruit["name"])
       insert_fruit(fruit["name"], fruit["color"], fruit["price"], 'fruits', im)
 
+
+  # Datos de prueba para el slogan
   h_data = [
   {"name": "RIESCO"},
   {"name": "Producto"},
@@ -148,30 +158,32 @@ def populate_test_database():
   {"name": "Membrillo"},
   ]
 
-  # Insert each fruit into the database using the existing function
+  # Insertamos los eslogans
   for h in h_data:
       insert_fruit(h["name"], None, None, 'header', None)
 
 
 def get_all_fruits(db='fruits'):
-  # Get the current directory
+
   current_directory = os.getcwd()
-  # Concatenate the current directory with your database name
+  # Buscamos el archivo de la base de datos en el fichero local
   db_path = os.path.join(current_directory, 'frutería_app.db')
   conn = sqlite3.connect(db_path)
   c = conn.cursor()
+  # QUERY
   c.execute(f"SELECT * FROM {db}")
   rows = c.fetchall()
   conn.close()
   return rows
 
 def get_random_fruits(db='header'):
-  # Get the current directory
+
   current_directory = os.getcwd()
-  # Concatenate the current directory with your database name
+  # Buscamos el archivo de la base de datos en el fichero local
   db_path = os.path.join(current_directory, 'frutería_app.db')
   conn = sqlite3.connect(db_path)
   c = conn.cursor()
+  # QUERY
   c.execute(f"SELECT name FROM {db} ORDER BY RANDOM() LIMIT 1")
   rows = c.fetchall()
   conn.close()
